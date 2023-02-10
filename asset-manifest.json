@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Networking_Application-/static/css/main.fe2d142e.css",
+    "main.js": "/Networking_Application-/static/js/main.c7310cdc.js",
+    "index.html": "/Networking_Application-/index.html",
+    "main.fe2d142e.css.map": "/Networking_Application-/static/css/main.fe2d142e.css.map",
+    "main.c7310cdc.js.map": "/Networking_Application-/static/js/main.c7310cdc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe2d142e.css",
+    "static/js/main.c7310cdc.js"
+  ]
+}
