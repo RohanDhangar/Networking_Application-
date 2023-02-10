@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, routes, route } from "react-router-dom";
+import Login from "./components/Login/Login";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
+  const { isAuthenticated } = useAuth0();
+
+  // console.log(isAuthenticated)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      {isAuthenticated ? (
+        <div className="app">
+          <Header />
+          <div className="app_body">
+            <routes>
+              <route path="/" element={<Home />} />
+              <route path="/about-us" element={<AboutUs />} />
+              <route path="/profile" element={<h1>Profile Page</h1>} />
+            </routes>
+          </div>
+          {/* 
+      
+        <div className='app_body'>
+          <AboutUs />
+        </div>
+
+        <Login /> */}
+        </div>
+      ) : (
+        <Home />
+      )}
+    </BrowserRouter>
   );
 }
 
